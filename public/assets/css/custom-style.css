@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins.ttf');
+}
+
+.font-custom {
+    font-family: 'Poppins';
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #3187e9, #1e5bb8);
+}

@@ -41,11 +41,10 @@ class QuestionController extends Controller
             'pertanyaan.max'      => 'Pertanyaan maksimal 300 karakter.',
         ]);
 
-        $data['nama']       = $request->nama;
-        $data['email']      = $request->email;
-        $data['pertanyaan'] = $request->pertanyaan;
+        $info = 'Terima kasih <b>' . e($request->nama) . '</b>! Pertanyaan Anda <i>"' . e($request->pertanyaan) . '"</i> '
+            . 'sudah kami terima dan akan dibalas melalui email <b>' . e($request->email) . '</b>.';
 
-        return view('home-question-respon', $data);
+        return redirect()->route('home')->with('info', $info);
     }
 
     /**
