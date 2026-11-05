@@ -40,7 +40,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section : data dari HomeController -->
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <h1 class="display-6 mb-2">{{ $username }}</h1>
@@ -61,25 +61,8 @@
                     </div>
                 </div>
 
-                {{-- Riwayat Pendidikan : contoh Blade Directive @foreach + @if --}}
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="h5 mb-3">Riwayat Pendidikan</h3>
-                        <ul class="list-group mb-0">
-                            @foreach ($list_pendidikan as $pendidikan)
-                                <li class="list-group-item">
-                                    {{ $loop->iteration }}. {{ $pendidikan }}
-                                    @if ($loop->last)
-                                        <span class="badge text-bg-success">Tertinggi</span>
-                                    @endif
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-
                 <!-- Accordion -->
-                <div class="accordion mt-4" id="accordionExample">
+                <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">About Us</button>
@@ -97,9 +80,81 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- Badge, List & Card --}}
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Badges, List, &amp; Card</h3>
+                        <div class="mb-3">
+                            <span class="badge text-bg-primary">Web Dev</span>
+                            <span class="badge text-bg-success">Laravel</span>
+                            <span class="badge text-bg-danger">Bootstrap</span>
+                        </div>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item">Item Satu</li>
+                            <li class="list-group-item">Item Dua</li>
+                            <li class="list-group-item">Item Tiga</li>
+                        </ul>
+                        <div class="p-3 border rounded">
+                            <strong>Div umum</strong> — ini hanya <em>container</em> untuk konten bebas.
+                        </div>
+                        <p class="text-muted small mt-3 mb-0">
+                            Gunakan <code>.card</code> untuk konten yang butuh border &amp; sedikit efek shadow.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Riwayat Pendidikan</h3>
+                        <ul class="list-group mb-0">
+                            @foreach ($list_pendidikan as $pendidikan)
+                                <li class="list-group-item">
+                                    {{ $loop->iteration }}. {{ $pendidikan }}
+                                    @if ($loop->last)
+                                        <span class="badge text-bg-success">Tertinggi</span>
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Form Pertanyaan</h5>
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        <form action="{{ route('question.store') }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama</label>
+                                <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pertanyaan" class="form-label">Pertanyaan</label>
+                                <textarea class="form-control" rows="4" id="pertanyaan" name="pertanyaan">{{ old('pertanyaan') }}</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+                        </form>
+                    </div>
+                </div>
+
                 {{-- Alerts --}}
                 <div class="card">
                     <div class="card-body">
