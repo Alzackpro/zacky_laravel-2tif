@@ -617,7 +617,7 @@
                                             <div class="col-auto">
                                                 <!-- Avatar -->
                                                 <a href="#" class="avatar">
-                                                    <img class="rounded" alt="Image placeholder" src="../../assets/img/team/profile-picture-1.jpg">
+                                                    <img class="rounded" alt="Image placeholder" src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}">
                                                 </a>
                                             </div>
                                             <div class="col-auto ms--2">
@@ -642,7 +642,7 @@
                                                 <div class="col-auto">
                                                     <!-- Avatar -->
                                                     <a href="#" class="avatar">
-                                                        <img class="rounded" alt="Image placeholder" src="../../assets/img/team/profile-picture-2.jpg">
+                                                        <img class="rounded" alt="Image placeholder" src="{{ asset('assets-admin/img/team/profile-picture-2.jpg') }}">
                                                     </a>
                                                 </div>
                                                 <div class="col-auto ms--2">
@@ -667,7 +667,7 @@
                                                 <div class="col-auto">
                                                     <!-- Avatar -->
                                                     <a href="#" class="avatar">
-                                                        <img class="rounded" alt="Image placeholder" src="../../assets/img/team/profile-picture-3.jpg">
+                                                        <img class="rounded" alt="Image placeholder" src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}">
                                                     </a>
                                                 </div>
                                                 <div class="col-auto ms--2">
@@ -692,7 +692,7 @@
                                                 <div class="col-auto">
                                                     <!-- Avatar -->
                                                     <a href="#" class="avatar">
-                                                        <img class="rounded" alt="Image placeholder" src="../../assets/img/team/profile-picture-4.jpg">
+                                                        <img class="rounded" alt="Image placeholder" src="{{ asset('assets-admin/img/team/profile-picture-4.jpg') }}">
                                                     </a>
                                                 </div>
                                                 <div class="col-auto ms--2">
